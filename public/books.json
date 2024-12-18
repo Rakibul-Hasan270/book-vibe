@@ -1,0 +1,80 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "image": "https://example.com/images/silent-patient.jpg",
+      "review": "A gripping psychological thriller with a shocking twist.",
+      "totalPages": 336,
+      "rating": 4.5,
+      "category": "Fiction",
+      "tags": ["Suspense", "Psychological"],
+      "publisher": "Celadon Books",
+      "yearOfPublishing": 2019
+    },
+    {
+      "bookId": 2,
+      "bookName": "Atomic Habits",
+      "author": "James Clear",
+      "image": "https://example.com/images/atomic-habits.jpg",
+      "review": "An insightful guide to building good habits and breaking bad ones.",
+      "totalPages": 320,
+      "rating": 4.8,
+      "category": "Self-help",
+      "tags": ["Productivity", "Behavior"],
+      "publisher": "Avery",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 3,
+      "bookName": "Becoming",
+      "author": "Michelle Obama",
+      "image": "https://example.com/images/becoming.jpg",
+      "review": "A deeply personal and inspiring memoir by the former First Lady.",
+      "totalPages": 448,
+      "rating": 4.9,
+      "category": "Biography",
+      "tags": ["Inspiration", "Memoir"],
+      "publisher": "Crown Publishing Group",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 4,
+      "bookName": "Dune",
+      "author": "Frank Herbert",
+      "image": "https://example.com/images/dune.jpg",
+      "review": "An epic science fiction masterpiece with complex characters and world-building.",
+      "totalPages": 896,
+      "rating": 4.6,
+      "category": "Science Fiction",
+      "tags": ["Adventure", "Classic"],
+      "publisher": "Chilton Books",
+      "yearOfPublishing": 1965
+    },
+    {
+      "bookId": 5,
+      "bookName": "Educated",
+      "author": "Tara Westover",
+      "image": "https://example.com/images/educated.jpg",
+      "review": "A powerful memoir about resilience and the value of education.",
+      "totalPages": 334,
+      "rating": 4.7,
+      "category": "Memoir",
+      "tags": ["Inspiration", "Education"],
+      "publisher": "Random House",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 6,
+      "bookName": "The Midnight Library",
+      "author": "Matt Haig",
+      "image": "https://example.com/images/midnight-library.jpg",
+      "review": "A touching exploration of regret, choices, and the infinite possibilities of life.",
+      "totalPages": 304,
+      "rating": 4.4,
+      "category": "Fiction",
+      "tags": ["Fantasy", "Philosophical"],
+      "publisher": "Canongate Books",
+      "yearOfPublishing": 2020
+    }
+  ]
