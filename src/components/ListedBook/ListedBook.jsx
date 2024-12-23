@@ -1,11 +1,33 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { IoIosArrowDown } from "react-icons/io";
+import { useLoaderData } from 'react-router';
+import { getStoredCardRead, getStoredCardWish } from '../../Utility/LocalStorage';
+import ReadBook from '../ReadBook/ReadBook';
+import WishBook from '../WishBook/WishBook';
 
 
 const ListedBook = () => {
     const [tabIndex, setTabIndex] = useState(0);
+    const books = useLoaderData();
+
+    const [readList, setReadList] = useState([]);
+    const [wishList, setWishList] = useState([]);
+
+    useEffect(() => {
+        if (books.length) {
+            const readLocalStg = getStoredCardRead();
+            const wishLocalStg = getStoredCardWish();
+            const readBookList = books.filter(book => readLocalStg.includes(book.bookId));
+            const WishBookList = books.filter(book => wishLocalStg.includes(book.bookId));
+
+            setReadList(readBookList);
+            setWishList(WishBookList);
+        }
+    }, [books]);
+
+
     return (
         <div className='max-w-7xl mx-auto mt-20'>
             <h3 className='text-center text-4xl font-bold mb-10'>Books</h3>
@@ -18,8 +40,18 @@ const ListedBook = () => {
                     <Tab>Read Books</Tab>
                     <Tab>Wishlist Books</Tab>
                 </TabList>
-                <TabPanel></TabPanel>
-                <TabPanel></TabPanel>
+                <TabPanel>
+                    <h3>read</h3>
+                    {
+                        readList.map(book => <ReadBook key={book.bookId} book={book}></ReadBook>)
+                    }
+                </TabPanel>
+                <TabPanel>
+                    <h3>wish</h3>
+                    {
+                        wishList.map(book => <WishBook key={book.bookId} book={book}></WishBook>)
+                    }
+                </TabPanel>
             </Tabs>
         </div>
     );
