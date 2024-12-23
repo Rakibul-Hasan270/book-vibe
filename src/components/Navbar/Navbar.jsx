@@ -16,7 +16,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
-                    to="/listed"
+                    to="/listedBook"
                     className={({ isActive }) =>
                         `px-3 py-2 rounded-lg ${isActive ? "bg-gradient-to-r from-green-500 to-lime-400 text-white" : "hover:text-green-500"
                         }`

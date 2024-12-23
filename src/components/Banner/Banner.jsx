@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const Banner = () => {
     return (
         <section className="hero bg-base-200 rounded-xl py-10 px-6 shadow-lg">
@@ -17,9 +19,11 @@ const Banner = () => {
                         Discover a curated selection of books that will inspire, educate,
                         and entertain. Perfect for any readers taste.
                     </p>
-                    <button className="btn bg-gradient-to-r from-green-500 to-lime-400  px-8 py-3 text-lg font-medium shadow-md">
-                        View The List
-                    </button>
+                    <Link to='/listedBook'>
+                        <button className="btn bg-gradient-to-r from-green-500 to-lime-400  px-8 py-3 text-lg font-medium shadow-md">
+                            View The List
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>
