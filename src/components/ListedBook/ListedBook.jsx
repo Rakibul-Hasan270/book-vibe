@@ -5,7 +5,6 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useLoaderData } from 'react-router';
 import { getStoredCardRead, getStoredCardWish } from '../../Utility/LocalStorage';
 import ReadBook from '../ReadBook/ReadBook';
-import WishBook from '../WishBook/WishBook';
 
 
 const ListedBook = () => {
@@ -16,12 +15,11 @@ const ListedBook = () => {
     const [wishList, setWishList] = useState([]);
 
     useEffect(() => {
-        if (books.length) {
+        if (books.length > 0) {
             const readLocalStg = getStoredCardRead();
             const wishLocalStg = getStoredCardWish();
             const readBookList = books.filter(book => readLocalStg.includes(book.bookId));
             const WishBookList = books.filter(book => wishLocalStg.includes(book.bookId));
-
             setReadList(readBookList);
             setWishList(WishBookList);
         }
@@ -41,15 +39,13 @@ const ListedBook = () => {
                     <Tab>Wishlist Books</Tab>
                 </TabList>
                 <TabPanel>
-                    <h3>read</h3>
                     {
                         readList.map(book => <ReadBook key={book.bookId} book={book}></ReadBook>)
                     }
                 </TabPanel>
                 <TabPanel>
-                    <h3>wish</h3>
                     {
-                        wishList.map(book => <WishBook key={book.bookId} book={book}></WishBook>)
+                        wishList.map(book => <ReadBook key={book.bookId} book={book}></ReadBook>)
                     }
                 </TabPanel>
             </Tabs>

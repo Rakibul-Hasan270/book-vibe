@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineGroupAdd, MdInsertPageBreak } from "react-icons/md";
+import { Link } from "react-router";
 
 const ReadBook = ({ book }) => {
-    const { image, bookName, author, tags, publisher, totalPages, category, rating, yearOfPublishing } = book;
+    const { bookId, image, bookName, author, tags, publisher, totalPages, category, rating, yearOfPublishing } = book;
 
     return (
         <div className="flex flex-col md:flex-row gap-6 bg-white shadow-lg rounded-lg overflow-hidden border mb-3">
@@ -57,11 +58,13 @@ const ReadBook = ({ book }) => {
                     </p>
                 </div>
 
-                <div className="mt-6">
-                    <button className="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition duration-300">
-                        View Details
-                    </button>
-                </div>
+                <Link to={`/bookList/${bookId}`}>
+                    <div className="mt-6">
+                        <button className="w-full px-4 py-2 bg-gradient-to-r from-green-500 to-lime-400 text-white font-semibold rounded-md transition duration-300">
+                            View Details
+                        </button>
+                    </div>
+                </Link>
             </div>
         </div>
     );
@@ -69,6 +72,7 @@ const ReadBook = ({ book }) => {
 
 ReadBook.propTypes = {
     book: PropTypes.shape({
+        bookId: PropTypes.number.isRequired,
         image: PropTypes.string.isRequired,
         bookName: PropTypes.string.isRequired,
         author: PropTypes.string.isRequired,

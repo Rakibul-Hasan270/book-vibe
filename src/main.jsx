@@ -7,6 +7,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage.jsx'
 import BookDetails from './components/BookDetails/BookDetails.jsx'
 import ListedBook from './components/ListedBook/ListedBook.jsx'
 import ReadPage from './components/ReadPage/ReadPage.jsx'
+import ViewBooksDetail from './components/ViewBooksDetail/ViewBooksDetail.jsx'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
       {
         path: '/read',
         element: <ReadPage></ReadPage>
+      },
+      {
+        path: '/bookList/:bookId',
+        element: <ViewBooksDetail></ViewBooksDetail>,
+        loader: () => fetch('/books.json')
       }
     ]
   }

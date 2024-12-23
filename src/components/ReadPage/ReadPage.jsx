@@ -1,8 +1,8 @@
 
 const ReadPage = () => {
     return (
-            <div>
-                <h3>Read Page</h3>
+        <div>
+            <h3>Read Page</h3>
         </div>
     );
 };
